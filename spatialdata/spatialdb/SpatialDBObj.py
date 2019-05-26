@@ -83,7 +83,7 @@ class SpatialDBObj(Component, ModuleSpatialDB):
     """
     try:
       Component._configure(self)
-      self.label(self.inventory.label)
+      ModuleSpatialDB.label(self, self.inventory.label)
     except ValueError, err:
       aliases = ", ".join(self.aliases)
       raise ValueError("Error while configuring spatial database "
